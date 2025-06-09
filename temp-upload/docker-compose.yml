@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: temp-upload
+    ports: 
+      - "8000:80"
+    develop:
+      watch:
+        - action: sync
+          path: ./src/
+          target: /var/www/html/
